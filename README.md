@@ -1,10 +1,26 @@
 # docker-elasticmq
 
-A simple docker container for [elasticmq](https://github.com/adamw/elasticmq)
+A docker container for [elasticmq](https://github.com/adamw/elasticmq) which is a nice message queue server with an SQS interface which makes it fantastic for SQS app developers.
 
-Two versions available. One built using docker official java base image which is kinda big
-FROM java:openjdk-8-jre [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest)
+## tags and links
+ * [`latest`, `0.8.12` (Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest)
 
-and one built from an alpine linux base image which is much smaller
-FROM frolvlad/alpine-oraclejdk8:slim A simple docker container for [elasticmq](https://github.com/adamw/elasticmq) with the service exposed on port 9324
+
+Running can be as simple as
+```sh
+docker run -P fingershock/elasticmq
+```
+however, to be generally useful, additional arguments or configuration files will need to be provided.
+
+To provide an elasticmq configuration file, bind mount it and tell elasticmq where it is using the `ELASTICMQ_OPTS` environment variable.
+```sh
+docker run -P -e ELASTICMQ_OPTS="-Dconfig.file=my.conf" -v /docker/host/emq/my.conf:/elasticmq/my.conf:ro  fingershock/elasticmq
+```
+
+
+Passing simple options without a full-blown config file can also be done using `ELASTICMQ_OPTS`
+
+```sh
+docker run -p 9999:9324 -e ELASTICMQ_OPTS="-Dnode-address.host=10.2.3.4 -Dnode-address.port=9999" fingershock/elasticmq
+```
 
