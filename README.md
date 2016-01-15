@@ -5,7 +5,7 @@ A docker container for [elasticmq](https://github.com/adamw/elasticmq) which is 
 It's on [docker-hub](https://hub.docker.com/r/fingershock/elasticmq/) and [github](https://github.com/iJJi/docker-elasticmq)
 
 ## tags and links
- * [`latest`, `0.8.12` (Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest)
+ * [`latest`, `v0.8.12` (Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest)
 
 
 Running can be as simple as
