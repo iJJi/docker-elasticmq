@@ -5,8 +5,8 @@ A docker container for [elasticmq](https://github.com/adamw/elasticmq) which is 
 It's on [docker-hub](https://hub.docker.com/r/fingershock/elasticmq/) and [github](https://github.com/iJJi/docker-elasticmq)
 
 ## tags and links
- * `latest` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest)
- * `0.8.12` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/0.8.12/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:0.8.12.svg)](https://imagelayers.io/?images=fingershock/elasticmq:0.8.12)
+ * `latest` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest) [![Build Status](https://travis-ci.org/iJJi/docker-elasticmq.svg?branch=master)](https://travis-ci.org/iJJi/docker-elasticmq)
+ * `0.8.12` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/0.8.12/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:0.8.12.svg)](https://imagelayers.io/?images=fingershock/elasticmq:0.8.12) [![Build Status](https://travis-ci.org/iJJi/docker-elasticmq.svg?branch=0.8.12)](https://travis-ci.org/iJJi/docker-elasticmq)
 
 ## running
 
