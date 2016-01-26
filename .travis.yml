@@ -2,7 +2,7 @@ branches:
   only:
     - master
 
-language: ruby
+language: bash
 
 services:
   - docker
