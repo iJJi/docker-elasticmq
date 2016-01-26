@@ -1,14 +1,28 @@
-sudo: required
+branches:
+  only:
+    - master
+
 language: ruby
+
 services:
-- docker
+  - docker
+
 before_install:
-- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+
+before_script:
+  - repo=fingershock/elasticmq
+
 script:
-- docker build -t fingershock/elasticmq:${TRAVIS_BRANCH/master/latest} .
-- docker run --rm fingershock/elasticmq:${TRAVIS_BRANCH/master/latest} java -version
+  - docker build -t $repo .
+  - docker run --rm $repo java -version
+
 after_success:
-- docker push     fingershock/elasticmq:${TRAVIS_BRANCH/master/latest}
+  - tag=$(docker run --rm $repo sh -c 'echo $ELASTICMQ_VERSION')
+  - docker tag $repo $repo:$tag
+  - docker push $repo:latest
+  - docker push $repo:$tag
+
 notifications:
   slack:
     secure: iM9+B44GcwxcqRltmUdos0wEAAlC+/RKmRz6KaI88MM9BateDmFAZlY8kqMfDjtUGVoF14ggOCNpnSUNxsX15eyI9qNFTv2cs+BxSsZqVIXZjJtn5h97ROyvQ+ZPBmDMfV6VHYIe52AjKzyODfe4UJ2raRQ1fYRw3AAf77R6bJYnOlhKwzppM7dNMl9yuTfAbpdvqEdRdagRs9gfc6G754cgypo5PWJFCiIFNUZIpiI17Dr/38MFCFUMfYNcC/ybd/g/W1FPMwVGUxTRbmasmI/SPV9SKJITjTDGxGYEIlIK8BrEgj2JlGgANDD0hseuJweFZBaO0fgSgyrDqUT7uiM6YliQKxpDs+jhRe2dDVWh1/osVBWq7J/W0sqW808D4XzEnRGFM/A9oDytqRdFlRNkQ+vEH9EGqHRLizKq/oJ6PVUQL7rRIT2Utv6Jze2jOfNdmMOuBkEcPR6SCUwip2KI79r/GQeRMKxd12PiI8J2WKUa6UFrhdGK/9e2DAnO+ZTo3prz73J9kH1Nf5bNPUj6EX9Z4XVlwUBCVrOsaRWdSJCUFya7Zq0Vt3SJ9aBGQQIxGd8vBJ6zhAwzYYKqw1R2dpLK6ADEzEYB+nSIjcpvCGbZx1spfA8B5GHzMPbPnaDleU5ixLsWOOzRcVi0NvTHUVOMQcgDZHi8hXtcg7s=
