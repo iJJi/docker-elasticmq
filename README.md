@@ -5,7 +5,7 @@ A docker container for [elasticmq](https://github.com/adamw/elasticmq) which is 
 It's on [docker-hub](https://hub.docker.com/r/fingershock/elasticmq/) and [github](https://github.com/iJJi/docker-elasticmq)
 
 ## tags and links
- * `latest`, `0.9.3` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest) [![Build Status](https://travis-ci.org/iJJi/docker-elasticmq.svg?branch=master)](https://travis-ci.org/iJJi/docker-elasticmq)
+ * `latest`, `0.11.0` [(Dockerfile)](https://github.com/ijji/docker-elasticmq/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/elasticmq:latest.svg)](https://imagelayers.io/?images=fingershock/elasticmq:latest) [![Build Status](https://travis-ci.org/iJJi/docker-elasticmq.svg?branch=master)](https://travis-ci.org/iJJi/docker-elasticmq)
 
 ## running
 
