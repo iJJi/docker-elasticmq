@@ -2,7 +2,7 @@ FROM frolvlad/alpine-oraclejdk8:slim
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 9324
 
-ENV ELASTICMQ_VERSION=0.12.0 \
+ENV ELASTICMQ_VERSION=0.13.0 \
     ELASTICMQ_SHA256=06c6b5dcf0d2f7efdbbeca466917a0345bc71fbccaf1282e74b14e596cd2b215
 
 # Download and install the binaries
