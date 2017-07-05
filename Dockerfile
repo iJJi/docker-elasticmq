@@ -2,8 +2,8 @@ FROM frolvlad/alpine-oraclejdk8:slim
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 EXPOSE 9324
 
-ENV ELASTICMQ_VERSION=0.13.2 \
-    ELASTICMQ_SHA256=6f038e3eb105c3de3de8a387e4360335e35ab8cc21575749b58eedfd19abe28f
+ENV ELASTICMQ_VERSION=0.13.8 \
+    ELASTICMQ_SHA256=41525fa141f36145e4bb54211bee0906a1901d1cfcbb0d86b8f4367b521e69e1
 
 # Download and install the binaries
 RUN wget -q -O /elasticmq-server.jar http://s3-eu-west-1.amazonaws.com/softwaremill-public/elasticmq-server-${ELASTICMQ_VERSION}.jar && \
