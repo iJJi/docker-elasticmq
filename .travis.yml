@@ -16,8 +16,6 @@ before_script:
 script:
   - docker build -t $repo .
   - docker run --rm $repo java -version
-
-after_success:
   - tag=$(docker run --rm $repo sh -c 'echo $ELASTICMQ_VERSION')
   - docker tag $repo $repo:$tag
   - docker push $repo:latest
